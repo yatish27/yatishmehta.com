@@ -1,0 +1,66 @@
+/*----------------------------------------------------------------------------
+  Code Styles
+----------------------------------------------------------------------------*/
+
+pre {
+  margin: 16px 0;
+  padding: 10px;
+  color: #000000;
+  background: #ffffff;
+  border-radius: 4px;
+  overflow: auto;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+code{
+  padding: 0 4px;
+  font-family: "Monaco", "Source Code Pro", "Courier New", Courier, sans-serif;
+  font-size: 0.8em;
+  color: #556270;
+  background: #F4FAFF;
+  border-radius: 3px;
+  span.global {
+    color: #3388DD;
+  }
+  span.brackets {
+    color: #777777;
+  }
+  span.string {
+    color: #BC6710;
+  }
+  span.symbol, span.selectors {
+    color: #1199EE;
+  }
+  span.properties {
+    color: #BB4411;
+  }
+  span.keywords {
+    color: #44BB22;
+  }
+  span.comment {
+    color: #BCBCBC;
+  }
+  span.shell {
+    background:#f1f1f1;
+  }
+}
+pre code {
+  padding: 0;
+  color: inherit;
+  background: inherit;
+  border-radius: 0;
+}
+code.html span.tag, code.xaml span.tag {
+  color: #BB4411;
+}
+code.html span.attribute, code.xaml span.attribute {
+  color: #44BB22;
+}
+code.html span.string, code.xaml span.string {
+  color: blue;
+}
+code.html span.comment, code.xaml span.comment {
+  color: #999999;
+}
+code.html span.doctype {
+  color: #D7FF80;
+}

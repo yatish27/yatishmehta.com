@@ -1,0 +1,18 @@
+markdown: rdiscount
+highlighter: pygments
+permalink: /:title
+rdiscount:
+  extensions: [smart]
+domain: http://www.yatishmehta.com
+exclude: ['config.ru', 'Gemfile', 'Gemfile.lock', 'vendor', 'Procfile', 'Rakefile']
+assets:
+  js_compressor:  uglifier
+  css_compressor: sass
+# Assets Pipeline
+assets:
+  sources:
+    - _assets
+    - _assets/images
+    - _assets/javascripts
+    - _assets/stylesheets
+    - _assets/fonts
