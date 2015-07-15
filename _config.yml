@@ -8,8 +8,9 @@ exclude: ['config.ru', 'Gemfile', 'Gemfile.lock', 'vendor', 'Procfile', 'Rakefil
 assets:
   js_compressor:  uglifier
   css_compressor: sass
-# Assets Pipeline
-assets:
+  compress:
+      css:  sass
+      js:   uglifier
   sources:
     - _assets
     - _assets/images
