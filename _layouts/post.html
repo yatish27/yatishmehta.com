@@ -3,7 +3,7 @@ layout: default
 ---
 {% if page.cover_pic %}
 <p class="cover-pic">
-    {% image page.cover_pic %}
+    {{ page.cover_pic | image }}
 </p>
 {% endif %}
 
