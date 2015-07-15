@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    
+    SEO for Octopress on Heroku | Yatish Mehta
+    
+  </title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/assets/app-27e124204a3471b7924b8ea7f6b3a2d4.css">
+  <link rel="alternate" href=http://www.yatishmehta.com/feed/" type="application/rss+xml" />
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-55193411-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <ul class="nav">
+      <li><a href="/about">About</a></li>
+      <li><a href="/links">Links</a></li>
+      <li class="logo"><a href="/">Y</a></li>
+      <li><a href="/">Blogs</a></li>
+      <li><a href="/code">Code</a></li>
+    </ul>
+  </header>
+
+  
+
+<h1 class="words">SEO for Octopress on Heroku</h1>
+<div class="author">
+    Yatish Mehta
+    <a href="https://github.com/yatish27" target="_blank"><i class="fa fa-github"></i></a>
+    <a href="https://twitter.com/yatish27" target="_blank"><i class="fa fa-twitter"></i></a>
+    <a href="https://www.linkedin.com/in/yatish27" target="_blank"><i class="fa fa-linkedin"></i></a>
+</div>
+<p class="date">April 22, 2014</p>
+
+<p>I recently shifted to octopress and I am loving it. It is an awesome blogging platform for developers.
+Cool looking layout ,simple to use, awesome use of HTML5 and CSS3.
+But there are some hidden features and changes that need to be improved for a better SEO.</p>
+
+<h2>Metadata description for every blog</h2>
+
+<p>When a post file is generate with the command <code>rake new_post[title]</code>,the keys layout, title, date, comments and
+categories  are automatically created, but if you add two more keys &ldquo;keywords&rdquo; and &ldquo;description&rdquo; it automatically
+creates meta tags for that corresponding post</p>
+
+<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="nn">---</span>
+<span class="l-Scalar-Plain">layout</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">post</span>
+<span class="l-Scalar-Plain">title</span><span class="p-Indicator">:</span> <span class="s">&quot;SEO</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">Octopress&quot;</span>
+<span class="l-Scalar-Plain">date</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">2012-04-22 09:55</span>
+<span class="l-Scalar-Plain">comments</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">true</span>
+<span class="l-Scalar-Plain">categories</span><span class="p-Indicator">:</span> <span class="p-Indicator">[</span><span class="nv">seo</span><span class="p-Indicator">,</span><span class="nv">octopress</span><span class="p-Indicator">]</span>
+<span class="l-Scalar-Plain">keywords</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">seo,octopress,heroku</span>
+<span class="l-Scalar-Plain">description</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">How to optimize Octopress for SEO,Heroku</span>
+<span class="nn">---</span></code></pre></div>
+
+
+<p>Hence the generated html of that particular post will be as follows</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;title&gt;</span>SEO for Octopress <span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;author&quot;</span> <span class="na">content=</span><span class="s">&quot;Yatish Mehta&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;description&quot;</span> <span class="na">content=</span><span class="s">&quot;How to optimize Octopress for SEO&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;keywords&quot;</span> <span class="na">content=</span><span class="s">&quot;seo,octopress&quot;</span><span class="nt">&gt;</span></code></pre></div>
+
+
+<h2>Metadata for home page</h2>
+
+<p>The above method creates meta tags of keywords and description for every post, but it does not create for the home page,
+hence a bit of hack is required to get it done.</p>
+
+<p><ul>
+<li>Change the source/head.html</p>
+
+<p><div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;author&quot;</span> <span class="na">content=</span><span class="s">&quot;{{ site.author }}&quot;</span><span class="nt">&gt;</span>
+{% capture description %}
+{% if page.description %}
+    {{ page.description }}
+{% elsif site.description %}
+    {{ site.description }}
+{%else%}
+    {{ content | raw_content }}
+{% endif %}
+{% endcapture %}
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;description&quot;</span> <span class="na">content=</span><span class="s">&quot;{{ description | strip_html | condense_spaces | truncate:150 }}&quot;</span><span class="nt">&gt;</span>
+{% if page.keywords %}
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;keywords&quot;</span> <span class="na">content=</span><span class="s">&quot;{{ page.keywords }}&quot;</span><span class="nt">&gt;</span>
+{%else%}
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;keywords&quot;</span> <span class="na">content=</span><span class="s">&quot;{{ site.keywords }}&quot;</span><span class="nt">&gt;</span>
+{% endif %}</code></pre></div></p>
+
+<p></li>
+<li>
+Add two keys in _config.yml</p>
+
+<p><div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">url</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">http://www.yatishmehta.in</span>
+<span class="l-Scalar-Plain">title</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Yatish Mehta</span>
+<span class="l-Scalar-Plain">subtitle</span><span class="p-Indicator">:</span>  <span class="l-Scalar-Plain">Hack to live</span>
+<span class="l-Scalar-Plain">author</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Yatish Mehta</span>
+<span class="l-Scalar-Plain">simple_search</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">http://google.com/search</span>
+<span class="l-Scalar-Plain">description</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Tips, tricks, and hacks on Ruby on Rails development.</span>
+<span class="l-Scalar-Plain">keywords</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">ruby,ruby on rails,salesforce,gem,web development,Ajax,SEO,scraping</span></code></pre></div></p>
+
+<p>This will add keywords and description in your homepage as well which very important considering the SEO
+</li></p>
+
+<h2>Redirect to single domain</h2>
+
+<p>At times your site is available on both domains example &lsquo;http://www.yatishmehta.com&rsquo; and &lsquo;http://yatishmehta.com&rsquo;.
+In such scenario, you are conflicting with yourself for unique content and this may hamper your rating.
+You should choose one of them as your main domain and redirect the other one to it. I have hosted my site on Heroku.
+The way to do it on Heroku is as follows</p>
+
+<p>Include gem &lsquo;rack-rewrite&rsquo; in your Gemfile</p>
+
+<p><div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">gem</span> <span class="s1">&#39;rack-rewrite&#39;</span></code></pre></div></p>
+
+<p>Make the following changes in your <code>config.ru</code> file. I have decided http://www.yatishmehta.com to be my primary domain.</p>
+
+<p><div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">require</span> <span class="s1">&#39;bundler/setup&#39;</span>
+<span class="nb">require</span> <span class="s1">&#39;sinatra/base&#39;</span>
+<span class="nb">require</span> <span class="s2">&quot;rack-rewrite&quot;</span>
+<span class="c1"># The project root directory</span>
+<span class="vg">$root</span> <span class="o">=</span> <span class="o">::</span><span class="no">File</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="bp"><strong>FILE</strong></span><span class="p">)</span>
+<span class="no">ENV</span><span class="o">[</span><span class="s1">&#39;RACK_ENV&#39;</span><span class="o">]</span> <span class="o">||=</span> <span class="s1">&#39;development&#39;</span>
+<span class="no">ENV</span><span class="o">[</span><span class="s1">&#39;SITE_URL&#39;</span><span class="o">]</span> <span class="o">||=</span> <span class="s1">&#39;www.yatishmehta.in&#39;</span>
+<span class="n">use</span> <span class="no">Rack</span><span class="o">::</span><span class="no">Rewrite</span> <span class="k">do</span>
+  <span class="n">r301</span> <span class="sr">%r{.*}</span><span class="p">,</span> <span class="s2">&quot;http://</span><span class="si">#{</span><span class="no">ENV</span><span class="o">[</span><span class="s1">&#39;SITE_URL&#39;</span><span class="o">]</span><span class="si">}</span><span class="s2">$&amp;&quot;</span><span class="p">,</span> <span class="ss">:if</span> <span class="o">=&gt;</span> <span class="no">Proc</span><span class="o">.</span><span class="n">new</span> <span class="p">{</span> <span class="o">|</span><span class="n">rack_env</span><span class="o">|</span>
+    <span class="no">ENV</span><span class="o">[</span><span class="s1">&#39;RACK_ENV&#39;</span><span class="o">]</span> <span class="o">==</span> <span class="s1">&#39;production&#39;</span> <span class="o">&amp;&amp;</span> <span class="n">rack_env</span><span class="o">[</span><span class="s1">&#39;SERVER_NAME&#39;</span><span class="o">]</span> <span class="o">!=</span> <span class="no">ENV</span><span class="o">[</span><span class="s1">&#39;SITE_URL&#39;</span><span class="o">]</span>
+  <span class="p">}</span>
+  <span class="n">r301</span> <span class="sr">%r{^(.+)/$}</span><span class="p">,</span> <span class="s1">&#39;$1&#39;</span>
+<span class="k">end</span></code></pre></div></p>
+
+
+<div class="keep-in-touch">
+  <p>
+    If you'd like to keep in touch, I tweet <a href="https://twitter.com/yatish27">@yatish27</a> on Twitter. Feel free to
+    give a shout out.
+  </p>
+</div>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'yatishmehtablog';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+</div><!-- /.main -->
+
+<script src="/assets/app-d1fb983d586cf0d289245a2e67a4fac5.js"></script>
+
+</body>
+</html>
