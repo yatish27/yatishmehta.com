@@ -1,7 +1,7 @@
 ---
 layout: post
 title: SEO for Octopress on Heroku
-summary: Additional chages are required to make Octopress more SEO friendly.
+summary: Additional changes are required to make Octopress more SEO friendly.
 ---
 
 I recently shifted to octopress and I am loving it. It is an awesome blogging platform for developers.
@@ -39,44 +39,46 @@ Hence the generated html of that particular post will be as follows
 The above method creates meta tags of keywords and description for every post, but it does not create for the home page,
 hence a bit of hack is required to get it done.
 
-<ul>
-<li>Change the source/head.html
-{% highlight html %}
-{% raw  %}
-<meta name="author" content="{{ site.author }}">
-{% capture description %}
-{% if page.description %}
-    {{ page.description }}
-{% elsif site.description %}
-    {{ site.description }}
-{%else%}
-    {{ content | raw_content }}
-{% endif %}
-{% endcapture %}
-<meta name="description" content="{{ description | strip_html | condense_spaces | truncate:150 }}">
-{% if page.keywords %}
-    <meta name="keywords" content="{{ page.keywords }}">
-{%else%}
-    <meta name="keywords" content="{{ site.keywords }}">
-{% endif %}
-{% endraw %}
-{% endhighlight %}
-</li>
-<li>
-Add two keys in _config.yml
-{% highlight yaml %}
-url: http://www.yatishmehta.in
-title: Yatish Mehta
-subtitle:  Hack to live
-author: Yatish Mehta
-simple_search: http://google.com/search
-description: Tips, tricks, and hacks on Ruby on Rails development.
-keywords: ruby,ruby on rails,salesforce,gem,web development,Ajax,SEO,scraping
-{% endhighlight %}
 
-This will add keywords and description in your homepage as well which very important considering the SEO
-</li>
-
+  * Change the source/head.html
+    
+    {% highlight html %}
+    {% raw  %}
+    <meta name="author" content="{{ site.author }}">
+    {% capture description %}
+    {% if page.description %}
+      {{ page.description }}
+    {% elsif site.description %}
+      {{ site.description }}
+    {% else %}
+      {{ content | raw_content }}
+    {% endif %}
+    {% endcapture %}
+    
+    <meta name="description" content="{{ description | strip_html | condense_spaces | truncate:150 }}">
+    {% if page.keywords %}
+      <meta name="keywords" content="{{ page.keywords }}">
+    {% else %}
+      <meta name="keywords" content="{{ site.keywords }}">
+    {% endif %}
+    
+    {% endraw %}
+    {% endhighlight %}
+    
+  * Add two keys in _config.yml
+  
+    ```
+    url: http://www.yatishmehta.in
+    title: Yatish Mehta
+    subtitle:  Hack to live
+    author: Yatish Mehta
+    simple_search: http://google.com/search
+    description: Tips, tricks, and hacks on Ruby on Rails development.
+    keywords: ruby,ruby on rails,salesforce,gem,web development,Ajax,SEO,scraping
+    ```
+    This will add keywords and description in your homepage as well which very important considering the SEO
+    
+    
 ## Redirect to single domain
 
 At times your site is available on both domains example 'http://www.yatishmehta.com' and 'http://yatishmehta.com'.

@@ -1,10 +1,10 @@
 ---
 layout: post
 title: 20 twitter handles to follow for Ruby on Rails developers
-summary: Twitter is the best place to read great content. These twitter handles are a must follow for every Ruby developer.
+summary: Twitter is the best place to find great content. It always great to follow legends from your programming community. These twitter handles are a must follow for every Ruby developer.
 ---
 
-20 Twitter handle you should follow if you are Ruby Developer
+20 Twitter handles you should follow if you are Ruby Developer.
 
 * <a href="https://twitter.com/dhh" target="_blank">@dhh</a> David Heinemeier Hansson, the creator of #RubyOnRails, #37Signals.
 * <a href="https://twitter.com/peterc" target="_blank">@peterc</a> Peter Cooper
