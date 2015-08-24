@@ -5,9 +5,9 @@ summary: Ruby is one of the most flexible, purely object-oriented language. As a
 cover_pic: ruby-oneliner.png
 ---
 
-Ruby is one of the most flexible, purely object-oriented language. As a code craftsman, one falls for its elegance and beauty. Recently, I was conducting a training program for beginners in Ruby programming.
+Recently, I was conducting a training program for beginners in Ruby programming. The main motive of the program was to get them familiar to ruby way of programming. The idiomatic ruby syntax.
 
-We decide to solve the following problems
+We decided to solve the following problems
 
 * Prime number detection
 * Factorial calculation
@@ -16,7 +16,7 @@ We decide to solve the following problems
 * Pascal triangle calculation
 * Sentence reversal.
 
-We came up with ruby one liners to try to solve these problems
+We came up with ruby one-liners to solve these problems
 
 {% highlight ruby %}
 def prime?(num)
@@ -34,12 +34,12 @@ def fibonnaci(num)
   (1..num - 2).reduce([0, 1]) { |fact| fact << fact[-1] + fact[-2] }
 end
 
-# Returns true if the binary of *num* is a palindrome
+# Returns true if the binary format of *num* is a palindrome
 def palindrome?(num)
   num.to_s(2) == num.to_s(2).reverse
 end
 
-# Return array of arrays being a pascal triangle till *num* no of rows
+# Returns array of arrays which forms the pascal triangle
 def pascal(num)
   pascal = [[1], [1, 1]]
   (num - 2).times do
@@ -58,9 +58,7 @@ def reverse_sentence(str)
 end
 {% endhighlight %}
 
-Testing is an intergral part of programming. From a full fledged Rails application to a simple script, accompanying specs helps in increasing the confidence of your code.
-
-I love rspec. It is a simple, behaviour driven testing framework.
+I use RSpec as my testing framework. It is always advisable to have corresponding specs. 
 
 {% highlight ruby %}
 require 'rspec'
@@ -103,7 +101,7 @@ describe 'palindrome?' do
 end
 
 describe 'pascal' do
-  it 'should return an array of arrays of pascal triangle' do
+  it 'returns an array of arrays of pascal triangle' do
     expect(pascal(3)).to eql([[1], [1, 1], [1, 2, 1]])
   end
 end
@@ -111,10 +109,9 @@ end
 describe 'reverse_sentence' do
   let(:sentence) { 'My name is Yatish' }
   let(:reverse)  { 'Yatish is name My' }
-  it 'should return the reverse of the sentence' do
+  it 'returns the reverse of the sentence' do
     expect(reverse_sentence(sentence)).to eq(reverse)
   end
 end
 {% endhighlight %}
 
-Ruby programming language is clean and simple. This makes it popular among the novice programmers.
