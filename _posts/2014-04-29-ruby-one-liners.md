@@ -64,7 +64,7 @@ I use RSpec as my testing framework. It is always advisable to have correspondin
 require 'rspec'
 require './test.rb'
 
-describe 'prime?' do
+describe '#prime?' do
   context 'when the number is prime' do
     it { expect(prime?(13)).to be true }
   end
@@ -74,7 +74,7 @@ describe 'prime?' do
   end
 end
 
-describe 'factorial' do
+describe '#factorial' do
   context 'when number is positive' do
     it { expect(factorial(5)).to eq(120) }
   end
@@ -84,13 +84,13 @@ describe 'factorial' do
   end
 end
 
-describe 'fibonnaci' do
+describe '#fibonnaci' do
   context 'when a number is given' do
     it { expect(fibonnaci(5)).to eql([0, 1, 1, 2, 3]) }
   end
 end
 
-describe 'palindrome?' do
+describe '#palindrome?' do
   context 'when the given number is a palindrome in binary' do
     it { expect(palindrome?(7)).to be true }
   end
@@ -100,15 +100,16 @@ describe 'palindrome?' do
   end
 end
 
-describe 'pascal' do
+describe '#pascal' do
   it 'returns an array of arrays of pascal triangle' do
     expect(pascal(3)).to eql([[1], [1, 1], [1, 2, 1]])
   end
 end
 
-describe 'reverse_sentence' do
+describe '#reverse_sentence' do
   let(:sentence) { 'My name is Yatish' }
   let(:reverse)  { 'Yatish is name My' }
+  
   it 'returns the reverse of the sentence' do
     expect(reverse_sentence(sentence)).to eq(reverse)
   end
