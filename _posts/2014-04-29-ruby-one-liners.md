@@ -29,7 +29,7 @@ def factorial(num)
   (1..num).reduce(1) { |fact, item| fact * item }
 end
 
-# Returns an array of fibonnaci series
+# Returns an array of fibonnaci series till num 
 def fibonnaci(num)
   (1..num - 2).reduce([0, 1]) { |fact| fact << fact[-1] + fact[-2] }
 end
@@ -58,7 +58,7 @@ def reverse_sentence(str)
 end
 {% endhighlight %}
 
-I use RSpec as my testing framework. It is always advisable to have corresponding specs. 
+I use RSpec for testing. It is always advisable to have corresponding specs for your code. 
 
 {% highlight ruby %}
 require 'rspec'
