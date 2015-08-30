@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Ruby one liners for simple problems
-summary: Ruby is one of the most flexible, purely object-oriented language. As a code craftsman, one falls for its elegance and beauty.
+summary: Ruby is one of the most flexible, purely object-oriented language. These one-liners exemplify the ruby way of programming.
 cover_pic: ruby-oneliner.png
 ---
 
