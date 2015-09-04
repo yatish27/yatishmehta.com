@@ -2,8 +2,8 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
  <title>Yatish's Blog</title>
- <link href="http://warpspire.com/feed" rel="self"/>
- <link href="http://warpspire.com/"/>
+ <link href="http://yatishmehta.com/feed" rel="self"/>
+ <link href="http://yatishmehta.com/"/>
  <updated>{{ site.time | date_to_xmlschema }}</updated>
  <id>{{ site.domain }}</id>
  <author>

@@ -5,7 +5,8 @@ summary: Ruby is one of the most flexible, purely object-oriented language. Thes
 cover_pic: ruby-oneliner.png
 ---
 
-Recently, I was conducting a training program for beginners in Ruby programming. The main motive of the program was to familiarize them to the ruby way of programming.
+Recently, I was conducting a training program for beginners in Ruby programming. 
+The main motive of the program was to familiarize them to the ruby way of programming.
 
 We decided to solve the following problems
 

@@ -13,7 +13,7 @@ trend are available in their catalogues.
 
 * [Jabong.com](http://www.jabong.com/) Founded in 2011, by an amazing trio, Jabong has managed to make a mark 
 very soon due to it's aggressive and innovative marketing strategies. Like every multi brand fashion e-commerce, Jabong 
-has almost every brand on its plate. A PHP site with citrix Netscalar platform, it lacks no speed. Jabong, initially 
+has almost every brand on its plate. A PHP site with Citrix Netscalar platform, it lacks no speed. Jabong, initially 
 known for women’s accessories and clothes, now has around 30000 products. With around more than $10 million funding by 
 the German incubator Rocket Internet, Jabong looks like a good bet. I had a very good experience shopping with jabong, 
 but would like if they had more innovative products.

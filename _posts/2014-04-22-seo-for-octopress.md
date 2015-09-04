@@ -36,7 +36,8 @@ Hence the generated html of that particular post will be as follows
 
 ## Metadata for home page
 
-The above method creates meta tags of keywords and description for every post, but it does not create for the home page,
+The above method creates meta tags of keywords and description for every post,
+but it does not create for the home page,
 hence a bit of hack is required to get it done.
 
 

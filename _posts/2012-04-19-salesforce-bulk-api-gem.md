@@ -30,12 +30,13 @@ Please go through the entire documentation of [databasedotcom](https://github.co
 {% highlight ruby %}
 require 'salesforce_bulk_api'
 
-client = Databasedotcom::Client.new :client_id =>  $SFDC_APP_CONFIG["client_id"], :client_secret => $SFDC_APP_CONFIG["client_secret"] #client_id and client_secret respectively
-client.authenticate :token => "my-oauth-token", :instance_url => "http://na1.salesforce.com"  #=> "my-oauth-token"
+client = Databasedotcom::Client.new :client_id =>  $SFDC_APP_CONFIG["client_id"], 
+                                    :client_secret => $SFDC_APP_CONFIG["client_secret"]
+client.authenticate :token => "my-oauth-token", :instance_url => "http://na1.salesforce.com" 
 salesforce = SalesforceBulkApi::Api.new(client)
 {% endhighlight %}
 
-Once `salesforce` object is authenticated, one can use it for various interactions with the Salesforce database.
+Once `salesforce` object is authenticated. It can be used to communicate with Salesforce API.
 
 {% highlight ruby %}
 # Insert/Create
