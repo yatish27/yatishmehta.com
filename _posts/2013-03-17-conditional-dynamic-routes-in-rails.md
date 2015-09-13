@@ -7,7 +7,7 @@ summary: Rails routes is used to map the 'url' with proper controller and action
 
 Rails routes is used to map the 'url' with corresponding controller action.
 It is similar to `.htaccess` in the PHP world. 
-There are scenarios when the same url-pattern needs to be mapped to different actions.
+There are conditions when the same url-pattern needs to be mapped to different actions.
 
 
 Consider the following the example
