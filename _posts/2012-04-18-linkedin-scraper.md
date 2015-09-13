@@ -4,10 +4,11 @@ title: Linkedin Scraper
 summary: Scraping Linkedin public profiles for data validation.
 ---
 
-For current porject, I needed to scrape information from Linkedin's public profile. 
-Other than my project, LinkedIn data is used in many scenarios like contact validation, recruitment. 
-I decided to package this utility into a rubygem. Linkedin-Scraper gem collects public information into a ruby object. 
-It has ActiveRecord-like methods to access it. It also has a binary file to return information in JSON format.
+For my current project, I need to gather information from individual's Linkedin public profile.
+LinkedIn data is useful in many ways, for instance, contact validation, recruitment.
+I decided to package this utility into a Rubygem. LinkedIn-Scraper gem collects public information of an individual's
+profile and wraps it into a Ruby object.
+It can be accessed using ActiveRecord-like methods. It also has a binary file to return information in JSON format.
 
 ## Usage
 You can install the gem using
