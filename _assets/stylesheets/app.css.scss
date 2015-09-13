@@ -38,7 +38,7 @@ body {
   color: #000000;
   background: $page-background-color;
   border-top: 4px solid $base-color;
-  text-align: justify;
+  text-align: left;
 }
 
 strong {
@@ -225,8 +225,15 @@ ul.nav {
 ------------------------------------------------------------------------------*/
 
 p.date {
+  text-align: left;
+  font-size: 16px;
   color: #aaa;
   margin: 0 0 0 0;
+}
+
+.date {
+  text-align: center;
+  color: #aaa;
 }
 
 h1.intro {
@@ -260,6 +267,7 @@ h1.words {
   color: $base-color;
   margin-bottom: 0;
   font-weight: 400;
+  text-align: center;
 }
 
 h1.link, h1.book {
@@ -414,6 +422,7 @@ p.note {
 .author {
   margin: 0;
   font-size: 18px;
+  text-align: center;
   color: #aaa;
   a {
     display: inline-block;

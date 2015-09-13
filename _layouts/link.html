@@ -1,7 +1,9 @@
 ---
 layout: default
 ---
-<p class="date">{{ page.date | date: "%B %e, %Y" }}</p>
-<h1 class="link"><a href="{{ page.link }}">{{ page.title }}</a></h1>
+
+<h1 class="words">{{ page.title }}</h1>
+<div class="date">{{ page.date | date: "%B %e, %Y" }}</div>
+
 {{ content }}
 

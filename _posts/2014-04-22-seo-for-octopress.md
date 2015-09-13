@@ -4,9 +4,9 @@ title: SEO for Octopress on Heroku
 summary: Additional changes are required to make Octopress more SEO friendly.
 ---
 
-I recently shifted to octopress and I am loving it. It is an awesome blogging platform for developers.
-Cool looking layout ,simple to use, awesome use of HTML5 and CSS3.
-But there are some hidden features and changes that need to be improved for a better SEO.
+I recently shifted to Octopress and I am loving it. It is an awesome blogging platform for developers.
+Cool looking layout, simple to use, awesome use of HTML5 and CSS3.
+But there are some hidden features and changes that need to be done for a better SEO.
 
 ## Metadata description for every blog
 

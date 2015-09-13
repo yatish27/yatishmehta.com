@@ -1,0 +1,19 @@
+---
+layout: default
+---
+
+<h1>Links</h1>
+
+This is place where I share the links of other interesting blogs or tutorials.
+
+<div class="listing">
+  {% for post in site.posts %}
+    {% if post.layout == 'link'%}
+    <div class="post">
+      <p class="date">{{ post.date | date: "%B %e, %Y" }}</p>
+      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+      <p class="post-summary">{{ post.summary }}</p>
+    </div>
+    {% endif %}
+  {% endfor %}
+</div>

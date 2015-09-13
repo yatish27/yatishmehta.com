@@ -3,13 +3,19 @@ layout: default
 title: "About Yatish"
 ---
 
-# Hi. I'm Yatish
+# Hi, I'm Yatish.
+
+<div class="social-links-about">
+    <a href="https://github.com/yatish27" target="_blank"><i class="fa fa-github"></i></a>
+    <a href="https://twitter.com/yatish27" target="_blank"><i class="fa fa-twitter"></i></a>
+    <a href="https://www.linkedin.com/in/yatish27" target="_blank"><i class="fa fa-linkedin"></i></a>
+</div>
 
 I am a software engineer. I strive towards producing elegant, beautiful, pragmatic and well-tested code.
 I love working on web products and consider myself a full-stack engineer. 
 I primarily work on Ruby on Rails and Javascript. I have been using it since 2011. 
 
-I studied Computer Science at University of Pune. I am doing my masters from North Carolina State University (Go Pack!!)
+I studied Computer Science at University of Pune. I am doing my masters at North Carolina State University (Go Pack!!)
 
 I worked at [Betterlabs](http://www.betterlabs.net/). I was involved for the development of
 [DataDoctor](http://datadoctorit.com/) and [Nurture](http://www.nurturehq.com/). 
