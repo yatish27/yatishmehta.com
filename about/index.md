@@ -19,12 +19,10 @@ I studied Computer Science at University of Pune. I am doing my masters at North
 
 I worked at [Betterlabs](http://www.betterlabs.net/). I was involved for the development of
 [DataDoctor](http://datadoctorit.com/) and [Nurture](http://www.nurturehq.com/). 
-Next, I worked for a New York based startup [Fab](fab.com). 
-and [Sungard](http://www.sungardas.com/Pages/default.aspx).
+Next, I worked for a New York based startup [Fab](fab.com)
+and later on at [Sungard](http://www.sungardas.com/Pages/default.aspx).
 My latest gig was at Office of CTO, [VMware, Palo Alto](http://www.vmware.com/).
 
-I love learning and experimenting with new technologies. I love studying modern design trends.
-I spend time reverse engineering layouts of interesting websites.
 Currently, I am obsessed with [ReactJS](http://facebook.github.io/react/) and [Go](https://golang.org/). 
 I am also trying some stunts with Python.
 Working with infrastructure gives me a kick. I like writing recipes to orchestrate my infrastructure.
@@ -34,7 +32,7 @@ I am an open-source evangelist. I contribute to multiple projects. I help people
 I have authored several gems(>25K downloads). I regularly speak at Ruby meetups.
 
 In my free time, I enjoy watching movies and sitcoms. I am a big fan of Suits.
-I like reading tech entrepreneurs' biographies. Recently, I have been obsessed with working out at the gym(I hope it continues).
+I like reading tech entrepreneurs' biographies. Recently, I am obsessed with working out at the gym(I hope it continues).
 
 I am [@yatish27](https://twitter.com/yatish27) on twitter, IRC and Github. Feel free to give a shout out. 
 
