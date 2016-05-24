@@ -15,7 +15,7 @@ I am a software engineer. I strive towards producing elegant, beautiful, pragmat
 I love working on web products and consider myself a full-stack engineer. 
 I primarily work on Ruby on Rails and Javascript. I have been using it since 2011. 
 
-I studied Computer Science at University of Pune. I am doing my masters at North Carolina State University (Go Pack!!)
+I studied Computer Science at University of Pune & masters at North Carolina State University (Go Pack!!)
 
 I worked at [Betterlabs](http://www.betterlabs.net/). I was involved for the development of
 [DataDoctor](http://datadoctorit.com/) and [Nurture](http://www.nurturehq.com/). 
@@ -25,8 +25,6 @@ My latest gig was at Office of CTO, [VMware, Palo Alto](http://www.vmware.com/).
 
 Currently, I am obsessed with [ReactJS](http://facebook.github.io/react/) and [Go](https://golang.org/). 
 I am also trying some stunts with Python.
-Working with infrastructure gives me a kick. I like writing recipes to orchestrate my infrastructure.
-I prefer writing automation scripts. This enables me to sit back and enjoy my Frappuccino.
 
 I am an open-source evangelist. I contribute to multiple projects. I help people resolve issues on IRC.
 I have authored several gems(>25K downloads). I regularly speak at Ruby meetups.
